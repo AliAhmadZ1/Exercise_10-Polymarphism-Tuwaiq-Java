@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -13,7 +14,8 @@ public class Main { //start class Main
     public static void main(String[] args) { //start main method
         Scanner input = new Scanner(System.in);
         //declaration
-        ArrayList<Vehicle> rentedVehicles = new ArrayList<Vehicle>();
+
+        List<Vehicle> rentedVehicles = new ArrayList<Vehicle>();
         int choice = 0;
         String vehicle = "";
         int rentAmount = 0;
