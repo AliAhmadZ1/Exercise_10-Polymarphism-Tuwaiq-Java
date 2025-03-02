@@ -1,23 +1,24 @@
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
-public class Main {
-    static {
+public class Main { //start class Main
+    static { //static block
         System.out.println("Exercise 10 Tuwaiq Java bootCamp");
         System.out.println("Ali Ahmed Alshehri");
         System.out.println("=====================================");
         Scanner input = new Scanner(System.in);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { //start main method
         Scanner input = new Scanner(System.in);
-        ArrayList rentedVehicles = new ArrayList();
+        //declaration
+        ArrayList<Vehicle> rentedVehicles = new ArrayList<Vehicle>();
         int choice = 0;
         String vehicle = "";
         int rentAmount = 0;
-//        Vehicle car = new Cars();
-//        Vehicle bike = new Bikes();
-//        Vehicle truck = new Trucks();
+
+        // print menu-driven
         System.out.println("Vehicle Rental System \n" +
                 "1. Rent a Car \n" +
                 "2. Rent a Bike \n" +
@@ -25,10 +26,13 @@ public class Main {
                 "4. View Rented Vehicles \n" +
                 "5. Exi");
 
-        while (choice != 5) {
+
+        while (choice != 5) { //while loop
+            // input choice from user
             System.out.print("Enter your choice: ");
             choice = input.nextInt();
-            switch (choice) {
+            //switch case
+            switch (choice) { //start switch case
                 case 1 -> {
                     System.out.print("Enter Car Model: ");
                     vehicle = input.next();
@@ -37,8 +41,7 @@ public class Main {
                     Vehicle car = new Cars(vehicle, rentAmount);
                     car.displayDetails();
                     System.out.println("--------------------");
-                    rentedVehicles.add("Car model: " + vehicle);
-                    rentedVehicles.add("Rental days: " + rentAmount);
+                    rentedVehicles.add(car);
                 }
                 case 2 -> {
                     System.out.print("Enter Bike Brand: ");
@@ -48,8 +51,7 @@ public class Main {
                     Vehicle bike = new Bikes(vehicle, rentAmount);
                     bike.displayDetails();
                     System.out.println("--------------------");
-                    rentedVehicles.add("Bike brand: " + vehicle);
-                    rentedVehicles.add("Rental hours: " + rentAmount);
+                    rentedVehicles.add(bike);
                 }
                 case 3 -> {
                     System.out.print("Enter Truck Type: ");
@@ -59,17 +61,21 @@ public class Main {
                     Vehicle truck = new Trucks(vehicle, rentAmount);
                     truck.displayDetails();
                     System.out.println("--------------------");
-                    rentedVehicles.add("Truck type: " + vehicle);
-                    rentedVehicles.add("Rental weeks" + rentAmount);
+                    rentedVehicles.add(truck);
                 }
                 case 4 -> {
-                    System.out.println(rentedVehicles);
+                    System.out.println("Rented Vehicles: ");
+                    for (int i = 0; i < rentedVehicles.size(); i++) {
+                        rentedVehicles.get(i).displayDetails();
+                        System.out.println();
+                    }
                 }
                 case 5 -> {
                     System.out.println("Thank you for using the Vehicle Rental System!");
                     break;
                 }
-            }
-        }
-    }
-}
+                default -> System.out.println("Wrong choice try AGAIN!!");
+            }//end switch
+        }// end while loop
+    } //end main method
+} //end class Main

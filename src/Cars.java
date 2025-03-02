@@ -2,6 +2,7 @@ public class Cars implements Vehicle{
     private String model;
     private int days;
 
+    //constructors
     public Cars(){
 
     }

@@ -2,6 +2,7 @@ public class Trucks implements Vehicle{
     private String type;
     private int week;
 
+    //constructors
     public Trucks() {
     }
     public Trucks(String type, int week) {

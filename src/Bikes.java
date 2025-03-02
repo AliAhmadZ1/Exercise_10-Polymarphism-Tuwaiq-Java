@@ -2,6 +2,7 @@ public class Bikes implements Vehicle{
     private String brand;
     private int hour;
 
+    //constructors
     public Bikes() {
     }
 
